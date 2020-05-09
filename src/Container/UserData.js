@@ -57,7 +57,7 @@ export default function UserData() {
         let userProfilesCopy = [...state.volunteersData];
 
         userProfilesCopy.map(eachUser => {
-            users.push(<EachUser key={eachUser.id} serialNo={users.length+1} volunteers={eachUser} beneficiaries={state.beneficiariesData} />);
+            users.push(<EachUser key={eachUser.id} serialNo={users.length + 1} volunteers={eachUser} beneficiaries={state.beneficiariesData} />);
         })
     }
 
@@ -65,7 +65,7 @@ export default function UserData() {
 
         <div className={styling.user}>
             {/* <AddNewUser addData={addNewData} /> */}
-            <h1>Volunteers List.. </h1>
+            <h1>Volunteers List</h1>
 
             <ol className={styling.volunteersListData}>
                 {users}
