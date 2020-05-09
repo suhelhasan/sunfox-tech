@@ -1,0 +1,27 @@
+.addUserData {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border:5px solid red;
+}
+.newUser {
+  background-color: rgb(158, 65, 65);
+  padding: 20px !important;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #000;
+}
+.newUser div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
