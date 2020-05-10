@@ -3,8 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 } */
-
+.volunteersListData {
+  width: auto;
+  /* height: 70vh; */
+}
 h1 {
   text-align: center;
 }
-
