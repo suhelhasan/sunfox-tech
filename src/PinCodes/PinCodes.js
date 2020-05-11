@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styling from './PinCodes.module.css'
-import AddPIn from './AddPin/AddPin'
+// import AddPIn from './AddPin/AddPin'
 export default function PinCodes(props) {
 
     const [state, setState] = useState({
@@ -10,22 +10,18 @@ export default function PinCodes(props) {
     let pinCodes = [];
     if (props.pincodeData) {
         props.pincodeData.map(eachPincode => {
-            pinCodes.push(<li><h3>◉ {eachPincode.name}</h3></li>);
+            pinCodes.push(<li key={eachPincode.id}><h3>◉ {eachPincode.name}</h3></li>);
         })
     }
 
 
-
-    function removePage() {
-        setState({ seeAfterClick: null });
-    }
     function addPinCodeToDB() {
         let value =
             <div className={styling.addNewPIn}>
                 <h1 onClick={removePage}>X</h1>
                 <div>
                     <h1>Add Pin Code</h1>
-                    <input placeholder='Enter Pin Code' onChange={handleData} name="inputValue" type="number"></input>
+                    <input required placeholder='Enter Pin Code' onChange={handleData} name="inputValue" type="number"></input>
                     <button onClick={onClickHandle}>ADD</button>
                 </div>
             </div>
@@ -33,8 +29,14 @@ export default function PinCodes(props) {
 
     }
 
+
+    function removePage() {
+        setState({ seeAfterClick: null });
+    }
+
     let inputValue;
     let handleData = (event) => {
+        event.preventDefault();
         inputValue = event.target.value;
     }
 

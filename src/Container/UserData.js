@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 // import axios from 'axios'
 import EachUser from '../Each-User/EachUser'
-import AddNewUser from '../AddNewUser/AddNewUser'
+// import AddNewUser from '../AddNewUser/AddNewUser'
 import { db, auth } from '../Services/Firebase'
 import styling from './UserData.module.css'
 import PinCodes from '../PinCodes/PinCodes'
-
 
 export default function UserData() {
     const [state, setState] = useState({
         beneficiariesData: null,
         volunteersData: null,
         pincodes: null,
+
     })
+    const [trackChange, setTrackChange] = useState(0)
 
     useEffect(() => {
 
@@ -27,49 +28,23 @@ export default function UserData() {
             .catch(error => {
                 console.log(error)
             })
+    }, []);
+
+    useEffect(() => {
 
         db.collection('volunteers').get()
             .then((querySnapshot) => {
                 const volunteers = [];
                 querySnapshot.forEach((doc) => {
                     volunteers.push({ id: doc.id, ...doc.data() });
-                    // volunteers.push({ ...doc.data() });
                 });
-                setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: volunteers, pincodes: state.pincodes }));
+                setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: volunteers, pincodes: state.pincodes, }));
             })
             .catch(error => {
                 console.log(error)
             })
-
-
     }, []);
 
-
-    useEffect(() => {
-        db.collection('pincodes').get()
-            .then((querySnapshot) => {
-                const pincodes = [];
-                querySnapshot.forEach((doc) => {
-                    pincodes.push(doc.data());
-                });
-                setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: state.volunteersData, pincodes: pincodes }));
-            })
-            .catch(error => {
-                console.log(error)
-            })
-
-    }, [state.pincodes]);
-    
-    // const addNewData = (userInfo) => {
-
-    //     db.collection("volunteers").doc(userInfo.id).set({ ...userInfo })
-    //         .then(function (docRef) {
-    //             alert("DATA SUCCESSFULLY ADDED");
-    //         })
-    //         .catch(function (error) {
-    //             console.error("Error adding document: ", error);
-    //         });
-    // }
 
     function AddPin(pin) {
         // Add a new document with a generated id.
@@ -82,7 +57,26 @@ export default function UserData() {
             .catch(function (error) {
                 console.error("Error adding document: ", error);
             });
+
+        setTrackChange(trackChange + 1)
     }
+
+    useEffect(() => {
+        db.collection('pincodes').get()
+            .then((querySnapshot) => {
+                const pincodes = [];
+                querySnapshot.forEach((doc) => {
+                    // pincodes.push(doc.data());
+                    pincodes.push({ id: doc.id, ...doc.data() });
+                });
+                setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: state.volunteersData, pincodes: pincodes }));
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        console.log('ADDED')
+    }, [trackChange]);
+
 
 
     let users = [];
@@ -100,7 +94,7 @@ export default function UserData() {
     return (
 
         <div className={styling.user}>
-            {/* <AddNewUser addData={addNewData} /> */}
+
             <h1>Volunteers List</h1>
 
             <ol className={styling.volunteersListData}>
@@ -108,7 +102,22 @@ export default function UserData() {
             </ol>
             <PinCodes afterClick={AddPin} pincodeData={state.pincodes} />
 
-
+          
         </div>
     )
 }
+
+
+
+    // const addNewData = (userInfo) => {
+
+    //     db.collection("volunteers").doc(userInfo.id).set({ ...userInfo })
+    //         .then(function (docRef) {
+    //             alert("DATA SUCCESSFULLY ADDED");
+    //         })
+    //         .catch(function (error) {
+    //             console.error("Error adding document: ", error);
+    //         });
+    // }
+// {/* <AddNewUser addData={addNewData} /> */ }
+

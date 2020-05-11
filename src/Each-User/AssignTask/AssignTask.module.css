@@ -1,0 +1,41 @@
+.AssignTask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AssignTask > div {
+  background-color: #2ecc71;
+  padding: 20px;
+  width: 40vw;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  border-radius: 10px;
+}
+.AssignTask > div > input {
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.AssignTask > div > button {
+  background-color: #3498db;
+  border-radius: 10px;
+  border: none;
+}
+.crossSign {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  cursor: pointer;
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px red;
+}
