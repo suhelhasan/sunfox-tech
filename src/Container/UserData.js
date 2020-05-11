@@ -105,7 +105,8 @@ export default function UserData() {
             <ol className={styling.volunteersListData}>
                 {users}
             </ol>
-            <PinCodes afterClick={AddPin} pincodeData={state.pincodes} />
+            {/* <PinCodes afterClick={AddPin} pincodeData={state.pincodes} /> */}
+            <PinCodes pincodeData={state.pincodes} />
 
 
         </div>

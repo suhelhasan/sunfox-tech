@@ -41,11 +41,11 @@ export default function ShowDetails(props) {
 
   var FinalBeneficiaries = <ol>{beneficiariesData}</ol>;
   if (dataB.length === 0) {
-    FinalBeneficiaries = <h2 style={{color:'red'}}>No Data Available</h2>;
+    FinalBeneficiaries = <h2 style={{ color: 'red' }}>No Data Available</h2>;
   }
   return (
     <div className={styling.ShowDetails}>
-      <h1 className={styling.RemoveAll} onClick={props.hide}>
+      <h1 className={styling.RemoveAll} onClick={() => props.hide}>
         X
       </h1>
 
