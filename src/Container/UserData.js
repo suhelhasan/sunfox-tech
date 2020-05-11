@@ -13,7 +13,7 @@ export default function UserData() {
         pincodes: null,
 
     })
-    const [trackChange, setTrackChange] = useState(0)
+    // const [trackChange, setTrackChange] = useState(0)
 
     // useEffect(() => {
     //     const beneficiaries = [];
@@ -50,37 +50,37 @@ export default function UserData() {
     // }, []);
 
 
-    function AddPin(pin) {
-        // Add a new document with a generated id.
-        db.collection("pincodes").add({
-            name: pin
-        })
-            .then(function (docRef) {
-                console.log("Document written with ID: ", docRef.id);
-            })
-            .catch(function (error) {
-                console.error("Error adding document: ", error);
-            });
+    // function AddPin(pin) {
+    //     // Add a new document with a generated id.
+    //     db.collection("pincodes").add({
+    //         name: pin
+    //     })
+    //         .then(function (docRef) {
+    //             console.log("Document written with ID: ", docRef.id);
+    //         })
+    //         .catch(function (error) {
+    //             console.error("Error adding document: ", error);
+    //         });
 
-        setTrackChange(trackChange + 1)
-    }
+    //     setTrackChange(trackChange + 1)
+    // }
 
-    useEffect(() => {
-        const pincodes = [];
-        db.collection('pincodes').get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    // pincodes.push(doc.data());
-                    pincodes.push({ id: doc.id, ...doc.data() });
-                });
-                setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: state.volunteersData, pincodes: pincodes }));
-                console.log('PINCODE ADDED');
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    // useEffect(() => {
+    //     const pincodes = [];
+    //     db.collection('pincodes').get()
+    //         .then((querySnapshot) => {
+    //             querySnapshot.forEach((doc) => {
+    //                 // pincodes.push(doc.data());
+    //                 pincodes.push({ id: doc.id, ...doc.data() });
+    //             });
+    //             setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: state.volunteersData, pincodes: pincodes }));
+    //             console.log('PINCODE ADDED');
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
 
-    }, [trackChange]);
+    // }, [trackChange]);
 
 
 
