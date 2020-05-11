@@ -73,11 +73,12 @@ export default function UserData() {
                     pincodes.push({ id: doc.id, ...doc.data() });
                 });
                 setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: state.volunteersData, pincodes: pincodes }));
+                console.log('PINCODE ADDED');
             })
             .catch(error => {
                 console.log(error)
             })
-        console.log('PINCODE ADDED');
+
     }, [trackChange]);
 
 
@@ -105,7 +106,7 @@ export default function UserData() {
             </ol>
             <PinCodes afterClick={AddPin} pincodeData={state.pincodes} />
 
-          
+
         </div>
     )
 }
