@@ -24,6 +24,7 @@ export default function UserData() {
                     beneficiaries.push({ ...doc.data() });
                 });
                 setState((state, props) => ({ beneficiariesData: beneficiaries, volunteersData: state.volunteersData, pincodes: state.pincodes }));
+                console.log('BENEFICIARIES')
             })
             .catch(error => {
                 console.log(error)
@@ -39,6 +40,8 @@ export default function UserData() {
                     volunteers.push({ id: doc.id, ...doc.data() });
                 });
                 setState((state, props) => ({ beneficiariesData: state.beneficiariesData, volunteersData: volunteers, pincodes: state.pincodes, }));
+                console.log('VOLUNTEERS');
+
             })
             .catch(error => {
                 console.log(error)
@@ -74,7 +77,7 @@ export default function UserData() {
             .catch(error => {
                 console.log(error)
             })
-        console.log('ADDED')
+        console.log('PINCODE ADDED');
     }, [trackChange]);
 
 
