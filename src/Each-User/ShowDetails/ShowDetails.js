@@ -1,7 +1,7 @@
 import React from "react";
 import styling from "./ShowDetails.module.css";
 
-export default function ShowDetails(props) {
+function ShowDetails(props) {
   let dataV = props.volunteers;
   let volunteerData = [];
   for (let i in dataV) {
@@ -63,3 +63,5 @@ export default function ShowDetails(props) {
     </div>
   );
 }
+
+export default React.memo(ShowDetails);

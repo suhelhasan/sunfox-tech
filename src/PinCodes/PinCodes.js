@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styling from './PinCodes.module.css'
 // import AddPIn from './AddPin/AddPin'
-export default function PinCodes(props) {
+function PinCodes(props) {
 
     const [state, setState] = useState({
         seeAfterClick: null
@@ -69,4 +69,5 @@ export default function PinCodes(props) {
 
 
 
+export default React.memo(PinCodes);
 

@@ -4,7 +4,7 @@ import ShowDetails from './ShowDetails/ShowDetails'
 import AssignTask from './AssignTask/AssignTask'
 // import Backdrop from './Backdrop/Backdrop'
 
-export default function EachUser(props) {
+function EachUser(props) {
 
     const [state, setState] = useState({
         showDetails: null,
@@ -42,7 +42,7 @@ export default function EachUser(props) {
                 // }
                 let dataAdded = <h1>Data Added</h1>
                 setState((state, props) => ({ showDetails: state.showDetails, showAssignTask: dataAdded }));
-                
+
                 setTimeout(() => {
                     setState((state, props) => ({ showDetails: state.showDetails, showAssignTask: null }))
                 }, 2000)
@@ -80,3 +80,5 @@ export default function EachUser(props) {
         </>
     )
 }
+
+export default React.memo(EachUser);

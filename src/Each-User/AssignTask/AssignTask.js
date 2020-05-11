@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styling from './AssignTask.module.css'
 
-export default function AssignTask(props) {
+function AssignTask(props) {
     // let [state, setState] = useState(null)
 
     // if (true) {
@@ -33,3 +33,5 @@ export default function AssignTask(props) {
         </div>
     )
 }
+
+export default React.memo(AssignTask);
