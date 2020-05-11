@@ -18,11 +18,11 @@ function PinCodes(props) {
     function addPinCodeToDB() {
         let value =
             <div className={styling.addNewPIn}>
-                <h1 onClick={() => removePage}>X</h1>
+                <h1 onClick={removePage}>X</h1>
                 <div>
                     <h1>Add Pin Code</h1>
                     <input required placeholder='Enter Pin Code' onChange={handleData} name="inputValue" type="number"></input>
-                    <button onClick={() => onClickHandle}>ADD</button>
+                    <button onClick={onClickHandle}>ADD</button>
                 </div>
             </div>
         setState((state, props) => ({ seeAfterClick: value }))
@@ -61,7 +61,7 @@ function PinCodes(props) {
             <ul>
                 {pinCodes}
             </ul>
-            <button className={styling.addPinCodeButton} onClick={() => addPinCodeToDB}>Add Pin Code</button>
+            <button className={styling.addPinCodeButton} onClick={addPinCodeToDB}>Add Pin Code</button>
 
         </div>
     )

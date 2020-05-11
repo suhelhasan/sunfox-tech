@@ -45,7 +45,7 @@ function ShowDetails(props) {
   }
   return (
     <div className={styling.ShowDetails}>
-      <h1 className={styling.RemoveAll} onClick={() => props.hide}>
+      <h1 className={styling.RemoveAll} onClick={props.hide}>
         X
       </h1>
 

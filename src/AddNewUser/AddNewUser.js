@@ -18,7 +18,7 @@
 //                     <p>Phone: <input onChange={handleData} name="id" type="text" /></p>
 //                     <p>Address: <input onChange={handleData} name="residenceAddress" type="text" /></p>
 //                     <p>PinCode: <input onChange={handleData} name="pinCode" type="text" /></p>
-//                     <button onClick={() => props.addData(userInfo)}>Add Data</button>
+//                     <button ={() => props.addData(userInfo)}>Add Data</button>
 //                 </div>
 //             </div>
 //         </div>
