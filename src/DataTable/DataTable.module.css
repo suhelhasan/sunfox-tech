@@ -1,0 +1,27 @@
+.table {
+  border: 1px solid #000;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table th {
+  border: 1px solid #000;
+  padding: 10px;
+  background-color: #3498db;
+}
+.table td {
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  padding: 15px 0px;
+}
+
+.table button {
+  padding: 10px;
+  border: none;
+  background-color: #2ecc71;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}

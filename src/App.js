@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
-import Data from './Container/UserData'
+import { BrowserRouter } from 'react-router-dom';
+import Main from './Main/main'
+// import UserData from './Container/UserData'
 
 function App() {
   return (
-    <div className="App">
-      <Data />
-    </div>
+    <BrowserRouter >
+      <div className="App">
+        <Main />
+      </div>
+    </BrowserRouter>
   );
 }
 

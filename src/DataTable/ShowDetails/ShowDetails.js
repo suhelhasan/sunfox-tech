@@ -17,8 +17,8 @@ function ShowDetails(props) {
   }
 
   let dataB = props.BeneficiariesForEach;
-
   let beneficiariesData = [];
+
   dataB.map((each) => {
     let eachDataArray = [];
     for (let i in each) {

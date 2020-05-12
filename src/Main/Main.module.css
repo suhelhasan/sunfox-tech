@@ -1,0 +1,27 @@
+.completePage {
+  background-color: #d3d3d3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.linkSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #3498db;
+}
+
+.linkSection button {
+  padding: 0px 15px;
+  border: none;
+  background-color: #2ecc71;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+.linkSection a {
+  text-decoration: none;
+  color: #000;
+}

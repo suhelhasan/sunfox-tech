@@ -10,3 +10,19 @@
 h1 {
   text-align: center;
 }
+
+.topSection {
+  background-color: #2ecc71;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+}
+.topSection button {
+  padding: 0px 15px;
+  border: none;
+  background-color: #3498db;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* #3498db */

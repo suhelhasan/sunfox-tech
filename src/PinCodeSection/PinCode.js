@@ -1,23 +1,22 @@
 import React, { useState } from 'react'
 import styling from './PinCodes.module.css'
-// import AddPIn from './AddPin/AddPin'
-function PinCodes(props) {
 
-    const [state, setState] = useState({
-        seeAfterClick: null
-    })
+
+function PinCode(props) {
+
+    const [state, setState] = useState([])
 
     let pinCodes = [];
     if (props.pincodeData) {
         props.pincodeData.map(eachPincode => {
-            pinCodes.push(<li key={eachPincode.id}><h3>◉ {eachPincode.name}</h3></li>);
+            pinCodes.push(<li key={eachPincode.id}><h3>{eachPincode.name}</h3></li>);
         })
     }
-
 
     function addPinCodeToDB() {
         let value =
             <div className={styling.addNewPIn}>
+
                 <h1 onClick={removePage}>X</h1>
                 <div>
                     <h1>Add Pin Code</h1>
@@ -25,13 +24,13 @@ function PinCodes(props) {
                     <button onClick={onClickHandle}>ADD</button>
                 </div>
             </div>
-        setState((state, props) => ({ seeAfterClick: value }))
+        setState(value)
 
     }
 
 
     function removePage() {
-        setState({ seeAfterClick: null });
+        setState([]);
     }
 
     let inputValue;
@@ -41,33 +40,38 @@ function PinCodes(props) {
     }
 
     function onClickHandle() {
-        if (inputValue.length < 4) {
+
+        if (inputValue === undefined || inputValue.length < 4) {
             alert('Length should be greater then 3')
         }
         else {
             props.afterClick(inputValue);
-            setState({ seeAfterClick: <h1>Data Added Successfully !!</h1> });
+            setState([]);
             setTimeout(() => {
-                setState({ seeAfterClick: null });
-            }, 2000);
+                alert('PINCODE ADDED SUCCESSFULLY')
+            }, 500);
         }
     }
 
     return (
         <div className={styling.pincodes}>
+            <div className={styling.header}>
+                <h1>Pin Codes</h1>
+                <button className={styling.addPinCodeButton} onClick={addPinCodeToDB}>Add Pin Code</button>
 
-            <h1>Pin Codes....</h1>
-            {state.seeAfterClick}
-            <ul>
-                {pinCodes}
-            </ul>
-            <button className={styling.addPinCodeButton} onClick={addPinCodeToDB}>Add Pin Code</button>
+            </div>
+            <div className={styling.pinSection}>
+                <ol>
+                    {pinCodes}
+                </ol>
 
+            </div>
+            {state}
         </div>
     )
 }
 
 
 
-export default React.memo(PinCodes);
+export default React.memo(PinCode);
 

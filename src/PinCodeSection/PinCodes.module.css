@@ -1,17 +1,21 @@
-.pincodes {
-  background-color: rgb(10, 224, 10);
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pinSection {
+  background-color: #3498db;
   padding: 20px;
 }
-.pincodes ul {
-  list-style-type: none;
-}
+
 .addPinCodeButton {
   padding: 15px 25px 15px 25px;
   border-radius: 10px;
   border: none;
   width: auto;
   height: auto;
-  background-color: #3498db;
+  text-align: center;
+
+  background-color: #2ecc71;
 }
 .addNewPIn {
   position: fixed;

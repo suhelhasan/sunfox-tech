@@ -20,14 +20,18 @@
   /* align-items: center; */
   border-radius: 10px;
 }
-.AssignTask > div > input {
+.AssignTask > div > input,
+textarea {
   padding: 10px 10px;
   border-radius: 10px;
+  border: none;
+  font-size: 18px;
 }
 .AssignTask > div > button {
   background-color: #3498db;
   border-radius: 10px;
   border: none;
+  margin-top: 15px;
 }
 .crossSign {
   position: absolute;
