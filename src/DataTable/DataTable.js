@@ -90,13 +90,13 @@ export default function DataTable(props) {
 
       users.push(
         <tr key={eachUser.id}>
-          <td>{eachUser.sequence + 1}</td>
-          <td>{eachUser.name}</td>
-          <td>{eachUser.age}</td>
-          <td>{eachUser.gender}</td>
-          <td>{eachUser.id}</td>
-          <td>{eachUser.pinCode}</td>
-          <td>{lengthOfBeneficiaries}</td>
+          <td className={styling.tableNumber}>{eachUser.sequence + 1}.</td>
+          <td>{eachUser.name ? eachUser.name : 'NA'}</td>
+          <td className={styling.hideAge}>{eachUser.age ? eachUser.age : 'NA'}</td>
+          <td>{eachUser.gender ? eachUser.gender : 'NA'}</td>
+          <td>{eachUser.id ? eachUser.id : 'NA'}</td>
+          <td>{eachUser.pinCode ? eachUser.pinCode : 'NA'}</td>
+          <td className={styling.hideBeneficiaries}>{lengthOfBeneficiaries}</td>
           <td>
             <button
               onClick={() =>

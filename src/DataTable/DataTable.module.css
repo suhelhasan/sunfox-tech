@@ -1,27 +1,67 @@
 .table {
   border: 1px solid #000;
-  width: 100vw;
+  width: 100%;
   height: auto;
   text-align: center;
   border-collapse: collapse;
   border-spacing: 0;
+  overflow-x: auto;
+  color: #000;
 }
 .table th {
-  border: 1px solid #000;
-  padding: 10px;
-  background-color: #3498db;
+  border: 1px solid #7c7e7e;
+  padding: 18px 10px;
+  background-color: #ebecec;
+  font-weight: bolder;
 }
+
 .table td {
-  border-right: 1px solid #000;
-  border-left: 1px solid #000;
+  border-right: 1px solid #7c7e7e;
+  border-left: 1px solid #7c7e7e;
   padding: 15px 0px;
 }
 
 .table button {
   padding: 10px;
   border: none;
-  background-color: #2ecc71;
+  background-color: #3498db;
   border-radius: 5px;
   margin: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .table {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tableNumber {
+    position: absolute;
+    left: 10;
+  }
+
+  .table th {
+    display: none;
+    visibility: hidden;
+  }
+  .table td {
+    border: none;
+    padding: 0px 0px;
+    margin: 10px;
+  }
+  .table tr {
+    background-color: #ebecec;
+    border-radius: 5px;
+    margin: 20px 7px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+  }
+  .hideBeneficiaries {
+    display: none;
+  }
+  .hideAge {
+    display: none;
+  }
 }

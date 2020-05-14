@@ -1,5 +1,5 @@
 .completePage {
-  background-color: #d3d3d3;
+  /* background-color: #d3d3d3; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,13 +10,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #3498db;
+  background-color: #ebecec;
 }
 
 .linkSection button {
   padding: 0px 15px;
   border: none;
-  background-color: #2ecc71;
+  background-color: #53e0bc;
   border-radius: 5px;
   margin: 5px;
   cursor: pointer;
