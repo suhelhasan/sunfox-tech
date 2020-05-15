@@ -15,7 +15,7 @@
   height: auto;
   text-align: center;
 
-  background-color: #2ecc71;
+  background-color: #53e0bc;
 }
 .addNewPIn {
   position: fixed;
@@ -40,7 +40,7 @@
   text-shadow: 1px 1px 5px red;
 }
 .addNewPIn > div {
-  background-color: #2ecc71;
+  background-color: #53e0bc;
   border-radius: 10px;
   padding: 30px;
   display: flex;

@@ -32,32 +32,73 @@
   width: 60%;
   height: 95vh;
   overflow: auto;
-  background-color: #3498db;
+  background-color: rgba(0, 0, 0, 0.9);
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .volunteers {
   width: 90%;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.445);
   margin: 20px;
   /* height:auto; */
-  background-color: #2ecc71;
+  background-color: #53e0bc;
   /* border: 2px solid black; */
 }
 .BeneficiariesForEach {
   width: 90%;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.479);
   margin: 20px;
 
-  background-color: #27ae60;
+  background-color: #53e0bc;
   /* border: 2px solid black; */
 }
 .diff {
   background-color: #3498db;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.445);
-  border-radius: 10px;
+  border-radius: 7px;
   margin: 20px 20px 20px 0px;
+}
+
+@media screen and (max-width: 700px) {
+  .ShowDetails ul {
+    padding: 5px;
+  }
+  .RemoveAll {
+    position: absolute;
+    top: -25px;
+    right: 20px;
+    font-size: 35px;
+  }
+
+  .ShowDetailsInner {
+    width: 98vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+  }
+  .volunteers {
+    width: 95%;
+    border-radius: 6px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.445);
+    margin: 10px;
+    padding-left: 20px;
+    background-color: #53e0bc;
+  }
+  .BeneficiariesForEach {
+    width: 99%;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 0;
+    background-color: #53e0bc;
+  }
+  .diff {
+    background-color: #3498db;
+    border-radius: 6px;
+    margin: 20px 20px 20px 0px;
+  }
 }
