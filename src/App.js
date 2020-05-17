@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import Main from './Main/main'
+import Layout from './Container/layout/Layout';
 // import UserData from './Container/UserData'
 
 function App() {
   return (
     <BrowserRouter >
       <div className="App">
-        <Main />
+        <Layout />
       </div>
     </BrowserRouter>
   );
