@@ -6,7 +6,7 @@ function DashboardSideBarItem(props){
 
     return(
         <div className={"DashboardSideBarItem" + (props.isActive?" item-active":"")}>
-            <img src={myImg}/>
+            <img src={props.image}/>
             <h4>{props.title}</h4>
         </div>
     )
