@@ -62,7 +62,7 @@ class Layout extends Component{
             //   return  this.state.user===null?
             //      <Login onLoginHandler={this.loginHandler}/>:
             //      <Dashboard onLogoutClickHandler={this.logoutHandler}/>;
-            return <Dashboard/>
+            return <Login/>
             }
 
 }
