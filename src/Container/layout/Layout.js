@@ -39,11 +39,11 @@ class Layout extends Component{
 
 
     loginHandler = (event,email,password) => {
-        event.preventDefault();
-        console.log(email,password);
-        firebase.auth().signInWithEmailAndPassword(email,password).catch((error)=>{
-            console.log("Error: ",error);
-        });
+        // event.preventDefault();
+        // console.log(email,password);
+        // firebase.auth().signInWithEmailAndPassword(email,password).catch((error)=>{
+        //     console.log("Error: ",error);
+        // });
     }
 
     logoutHandler = (event)=>{
@@ -59,9 +59,10 @@ class Layout extends Component{
 
 
     render(){
-              return  this.state.user===null?
-                 <Login onLoginHandler={this.loginHandler}/>:
-                 <Dashboard onLogoutClickHandler={this.logoutHandler}/>;
+            //   return  this.state.user===null?
+            //      <Login onLoginHandler={this.loginHandler}/>:
+            //      <Dashboard onLogoutClickHandler={this.logoutHandler}/>;
+            return <Dashboard/>
             }
 
 }
