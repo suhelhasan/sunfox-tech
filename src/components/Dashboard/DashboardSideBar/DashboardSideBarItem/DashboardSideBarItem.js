@@ -1,5 +1,4 @@
 import React from 'react';
-import myImg from '../../../../assets/images/gestures.svg';
 import './DashboardSideBarItem.css';
 
 function DashboardSideBarItem(props){

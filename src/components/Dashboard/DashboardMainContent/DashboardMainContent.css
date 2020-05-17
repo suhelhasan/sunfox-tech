@@ -1,0 +1,7 @@
+
+.dashboard-main-content{
+    display: flex;
+    flex-direction: column;
+    background-color: #F6FAFB;
+    flex: 8;
+}

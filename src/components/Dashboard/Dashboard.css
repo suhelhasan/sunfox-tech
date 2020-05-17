@@ -6,15 +6,5 @@ background-color: chocolate;
 flex-direction: row;
 }
 
-.dashboard-sidebar{
-    background-color: #17234D;
-    flex-basis: 260px;
-}
-.dashboard-main-content{
-    background-color: #F6FAFB;
-    flex: 8;
-}
 
-.sidebar-header{
-    height:200px;
-}
+
