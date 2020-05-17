@@ -5,7 +5,9 @@ import './DashboardSideBarItem.css';
 function DashboardSideBarItem(props){
 
     return(
-        <div className={"DashboardSideBarItem" + (props.isActive?" item-active":"")}>
+        <div 
+        onClick={props.onClickHandler}
+        className={"DashboardSideBarItem" + (props.isActive?" item-active":"")}>
             <img src={props.image}/>
             <h4>{props.title}</h4>
         </div>

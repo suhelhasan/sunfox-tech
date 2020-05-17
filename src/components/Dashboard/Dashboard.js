@@ -11,8 +11,14 @@ import beneficiariesImage from '../../assets/images/beneficiaries.svg';
 class Dashboard extends Component{
 
    itemClickHandler = (event, index) => {
-
+        this.setState({
+            selectedItem:index
+        });
    } 
+
+   state={
+       selectedItem:0
+   }
 
    render(){
     return (
@@ -25,27 +31,33 @@ class Dashboard extends Component{
                 <DashboardSideBarItem 
                     image={homeImg} 
                     title="Home" 
-                    onClick={(e)=>this.itemClickHandler(e,0)}/>
+                    isActive={this.state.selectedItem===0}
+                    onClickHandler={(e)=>this.itemClickHandler(e,0)}/>
                 <DashboardSideBarItem 
                     image={volunteerImage} 
                     title="Volunteers" 
-                    onClick={(e)=>this.itemClickHandler(e,1)}/>
+                    isActive={this.state.selectedItem===1}
+                    onClickHandler={(e)=>this.itemClickHandler(e,1)}/>
                 <DashboardSideBarItem 
                     image={beneficiariesImage} 
                     title="Beneficiaries" 
-                    onClick={(e)=>this.itemClickHandler(e,2)}/>
+                    isActive={this.state.selectedItem===2}
+                    onClickHandler={(e)=>this.itemClickHandler(e,2)}/>
                 <DashboardSideBarItem 
                     image={locationImage} 
                     title="Pin Codes" 
-                    onClick={(e)=>this.itemClickHandler(e,3)}/>
+                    isActive={this.state.selectedItem===3}
+                    onClickHandler={(e)=>this.itemClickHandler(e,3)}/>
                 <DashboardSideBarItem 
                     image={locationImage} 
                     title="Mandals" 
-                    onClick={(e)=>this.itemClickHandler(e,4)}/>
+                    isActive={this.state.selectedItem===4}
+                    onClickHandler={(e)=>this.itemClickHandler(e,4)}/>
                 <DashboardSideBarItem 
                     image={locationImage} 
                     title="Gram Panchayats" 
-                    onClick={(e)=>this.itemClickHandler(e,5)}/>
+                    isActive={this.state.selectedItem===5}
+                    onClickHandler={(e)=>this.itemClickHandler(e,5)}/>
             </div>
             <div className="dashboard-main-content">
     

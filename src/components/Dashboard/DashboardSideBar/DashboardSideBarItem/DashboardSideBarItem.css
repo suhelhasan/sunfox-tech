@@ -16,6 +16,7 @@
 }
 
 .item-active{
+    color:white;
     background-color: teal;
 }
 
