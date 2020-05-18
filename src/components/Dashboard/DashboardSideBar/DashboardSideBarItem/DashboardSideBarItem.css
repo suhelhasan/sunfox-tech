@@ -22,6 +22,9 @@
 .DashboardSideBarItem:hover{
     background-color: teal;
 }
+a{
+    text-decoration: none;
+}
 
 .item-active{
     text-decoration: none;

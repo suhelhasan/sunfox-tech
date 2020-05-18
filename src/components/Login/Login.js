@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import styling from "./Login.module.css";
 import logo from "./gestures.svg";
 import { Redirect } from "react-router";
+import Loader from '../UI/Loader/Loader';
 
 class Login extends Component {
   state = {
     email: "",
     password: "",
   };
-
-  constructor(){
-    super();
-  }
 
   componentDidMount(){
     console.log("Login",this.props);
@@ -34,9 +31,16 @@ class Login extends Component {
      return <Redirect to="/admin"/>
 
     return (
-      
+     
       <div className={styling.loginPage}>
+        
+        {this.props.loading?
+          <div>
+          <Loader/>
+          <p>Logging in... Please wait.</p>
+          </div>:
         <div className={styling.login}>
+          
           <div className={styling.header}>
             <img alt="logo" src={logo} />
             <h1>Hello, </h1>
@@ -71,7 +75,13 @@ class Login extends Component {
               }
             />
           </form>
+            {
+              this.props.error !==null?
+            <p className={styling.error}>{""+this.props.error}</p>
+              :null
+            }
         </div>
+  }
       </div>
     );
   }

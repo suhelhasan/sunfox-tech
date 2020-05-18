@@ -23,9 +23,10 @@ class Layout extends Component{
         firebase.auth().onAuthStateChanged((firebaseUser)=>{
             if(this.state.user!==firebaseUser)
             this.setState({
-                user:firebaseUser
+                user:firebaseUser,
+                loading:false
             });
-            console.log(firebaseUser);
+            console.log("componentDidMount",firebaseUser);
         });
 
         // firebase.firestore().collection('volunteers').get()
@@ -41,10 +42,17 @@ class Layout extends Component{
 
 
     loginHandler = (event,email,password) => {
+        this.setState({
+            loading:true
+        })
         event.preventDefault();
         console.log(email,password);
-        firebase.auth().signInWithEmailAndPassword(email,password).catch((error)=>{
-            console.log("Error: ",error);
+        firebase.auth().signInWithEmailAndPassword(email,password).catch((e)=>{
+            console.log("Error: ",e);
+            this.setState({
+                error:e,
+                loading:false
+            })
         });
     }
 
@@ -53,6 +61,8 @@ class Layout extends Component{
     }
 
     state={
+        error:null,
+        loading:true,
         user:null
     }
 
@@ -69,7 +79,11 @@ class Layout extends Component{
                            return <Redirect to="/login"/>
                         }}/>
                         <Route path="/login"  render={()=>{
-                           return <Login {...this.props} user={this.state.user}
+                           return <Login 
+                           {...this.props} 
+                           loading={this.state.loading} 
+                           error={this.state.error}
+                           user={this.state.user}
                            onLoginHandler={this.loginHandler} 
                            />
                         }}/>
