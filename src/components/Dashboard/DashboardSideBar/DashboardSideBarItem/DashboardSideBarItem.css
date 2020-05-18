@@ -11,6 +11,10 @@
     transition: 0.1s;
 }
 
+ .link{
+    text-decoration: none;
+}
+
 .DashboardSideBarItem:hover{
     background-color: teal;
 }

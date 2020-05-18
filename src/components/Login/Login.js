@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import styling from "./Login.module.css";
 import logo from "./gestures.svg";
+import { Redirect } from "react-router";
 
 class Login extends Component {
   state = {
     email: "",
     password: "",
   };
+
+  constructor(){
+    super();
+  }
+
+  componentDidMount(){
+    console.log("Login",this.props);
+
+  }
 
   emailChangeHandler = (e) => {
     this.setState({
@@ -20,7 +30,11 @@ class Login extends Component {
   };
 
   render() {
+    if(this.props.user!==null)
+     return <Redirect to="/admin"/>
+
     return (
+      
       <div className={styling.loginPage}>
         <div className={styling.login}>
           <div className={styling.header}>

@@ -1,5 +1,7 @@
 .dashboard-main-content-header{
+    display: flex;
+    flex-direction: row-reverse;
     width: 100%;
-    background-color: yellowgreen;
-    height:100px;
+    padding:16px 24px;
+    background-color: #f4f4f4;
 }

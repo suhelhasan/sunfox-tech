@@ -1,0 +1,35 @@
+
+.table{
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  table {
+    border: 1px solid #dcdcdc;
+    margin-top: 10px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 100%;
+    margin-bottom: 15px;
+    background-color: transparent; /* Change the background-color of table here */
+    text-align: left; /* Change the text-alignment of table here */
+  }
+
+  td,th{
+      padding: 16px 12px;
+      border: 1px solid #eee;
+  }
+  td{
+      font-size: 0.9em;
+      color:#555;
+  }
+
+  th{
+      font-size: 1.2em;
+      background-color: #f4f4f4;
+  }
