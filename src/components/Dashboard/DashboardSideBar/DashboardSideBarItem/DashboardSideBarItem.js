@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 function DashboardSideBarItem(props){
 
     return(
-        <NavLink to={props.linkTo} class="link" activeClassName="item-active">
+        <NavLink to={props.linkTo} activeClassName="item-active">
             <div className="DashboardSideBarItem">
                 <img src={props.image}/>
                 <h4>{props.title}</h4>

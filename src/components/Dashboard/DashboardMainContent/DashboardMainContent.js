@@ -11,7 +11,11 @@ function DashboardMainContent(props){
             <DashboardMainContentHeader logoutHandler={props.logoutHandler}/>
         
              
-            <DashboardMainContentBody volunteers={props.volunteers}/>
+            <DashboardMainContentBody 
+                pincodes={props.pincodes}
+                panchayats={props.panchayats}
+                mandals={props.mandals}
+                volunteers={props.volunteers}/>
        </div>
     )
 }

@@ -11,6 +11,10 @@
     transition: 0.1s;
 }
 
+.DashboardSideBarItem a{
+    text-decoration: none;;
+}
+
  .link{
     text-decoration: none;
 }
@@ -20,6 +24,11 @@
 }
 
 .item-active{
+    text-decoration: none;
+}
+
+.item-active div{
+
     color:white;
     background-color: teal;
 }

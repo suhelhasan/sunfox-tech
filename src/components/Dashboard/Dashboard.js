@@ -21,6 +21,9 @@ class Dashboard extends Component{
    componentDidMount(){
          let arr =[];
          console.log("props,",this.props);
+         this.loadPincodes();
+         this.loadMandals();
+         this.loadPanchayats();
         //  firebase.firestore().collection('volunteers').get()
         //     .then((snapshot) => {
         //         snapshot.forEach((doc) => {
@@ -36,6 +39,43 @@ class Dashboard extends Component{
         //         console.log('Error getting documents', err);
         //     });
    }
+
+   loadPincodes = () => {
+       let vPincodes= [];
+       firebase.database().ref("pincodes").on('value',(snapshot)=>{
+           let codes = snapshot.val();
+           for(let code in codes){
+               vPincodes.push(codes[code]);
+           }
+           this.setState({
+                pincodes:vPincodes
+           })
+       })
+   }
+   loadMandals = () => {
+    let vMandals= [];
+    firebase.database().ref("mandals").on('value',(snapshot)=>{
+        let codes = snapshot.val();
+        for(let code in codes){
+            vMandals.push(codes[code]);
+        }
+        this.setState({
+             mandals:vMandals
+        })
+    })
+}
+loadPanchayats = () => {
+    let vPanchayats= [];
+    firebase.database().ref("panchayats").on('value',(snapshot)=>{
+        let codes = snapshot.val();
+        for(let code in codes){
+            vPanchayats.push(codes[code]);
+        }
+        this.setState({
+             panchayats:vPanchayats
+        })
+    })
+}
 
    state={
        selectedItem:0,
@@ -56,7 +96,15 @@ class Dashboard extends Component{
                 selectedItem={this.state.selectedItem}
                 itemClickHandler={this.itemClickHandler}
                  />
-            <DashboardMainContent volunteers={this.state.volunteers} logoutHandler={this.props.logoutHandler} />
+            <DashboardMainContent
+                 volunteers={this.state.volunteers}
+                 beneficiaries={this.state.beneficiaries}
+                 pincodes={this.state.pincodes}
+                 mandals={this.state.mandals}
+                 panchayats={this.state.panchayats}
+                 logoutHandler={this.props.logoutHandler}
+
+            />
             {/* <h1>This is dashboard</h1>
             <button onClick={props.onLogoutClickHandler}>Logout</button>
          */}
