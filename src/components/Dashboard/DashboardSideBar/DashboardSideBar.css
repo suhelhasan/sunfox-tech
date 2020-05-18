@@ -1,7 +1,22 @@
-.dashboard-sidebar{
-    background-color: #17234D;
-    flex-basis: 260px;
+.entirePage {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-.sidebar-header{
-    height:200px;
+.dashboard-sidebar {
+  background-color: #17234d;
+  flex-basis: 260px;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+}
+.sidebar-header {
+  height: 200px;
+}
+.crossIcon {
+  float: right;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
 }

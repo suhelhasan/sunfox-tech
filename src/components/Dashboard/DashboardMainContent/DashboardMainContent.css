@@ -1,7 +1,6 @@
-
-.dashboard-main-content{
-    display: flex;
-    flex-direction: column;
-    background-color: #F6FAFB;
-    flex: 8;
+.dashboard-main-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6fafb;
+  flex: 8;
 }

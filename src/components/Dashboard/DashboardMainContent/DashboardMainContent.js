@@ -3,12 +3,12 @@ import './DashboardMainContent.css';
 import DashboardMainContentHeader from './DashboardMainContentHeader/DashboardMainContentHeader';
 import DashboardMainContentBody from './DashboardMainContentBody/DashboardMainContentBody';
 
-function DashboardMainContent(props){
+function DashboardMainContent(props) {
     return (
-       <div className="dashboard-main-content">
-            <DashboardMainContentHeader/>
-            <DashboardMainContentBody/>
-       </div>
+        <div className="dashboard-main-content">
+            <DashboardMainContentHeader openSidebar={props.openSidebar} />
+            <DashboardMainContentBody />
+        </div>
     )
 }
 

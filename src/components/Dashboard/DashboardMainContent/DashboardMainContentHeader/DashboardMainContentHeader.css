@@ -1,5 +1,12 @@
-.dashboard-main-content-header{
-    width: 100%;
-    background-color: yellowgreen;
-    height:100px;
+.dashboard-main-content-header {
+  width: 100%;
+  background-color: yellowgreen;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.burgerMenu {
+  margin: 20px;
+  font-size: 30px;
+  cursor: pointer;
 }
