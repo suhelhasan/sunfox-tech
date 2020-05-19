@@ -16,13 +16,11 @@ class Dashboard extends Component {
         sidebar: false,
     }
 
-    openSidebar = () => {
-        this.setState({ sidebar: true })
+    toggleSidebar = () => {
+        this.setState({ sidebar: !this.state.sidebar })
     }
 
-    closeSidebar = () => {
-        this.setState({ sidebar: false })
-    }
+
 
     render() {
         return (
@@ -31,12 +29,11 @@ class Dashboard extends Component {
                     <DashboardSideBar
                         selectedItem={this.state.selectedItem}
                         itemClickHandler={this.itemClickHandler}
-                        closeSidebar={this.closeSidebar}
                     />
                     : null
                 }
 
-                <DashboardMainContent openSidebar={this.openSidebar} />
+                <DashboardMainContent toggleSidebar={this.toggleSidebar} currentIcon={this.state.sidebar} />
 
                 {/* <h1>This is dashboard</h1>
             <button onClick={props.onLogoutClickHandler}>Logout</button>

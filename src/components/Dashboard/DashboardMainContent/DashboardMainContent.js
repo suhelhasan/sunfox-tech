@@ -6,7 +6,7 @@ import DashboardMainContentBody from './DashboardMainContentBody/DashboardMainCo
 function DashboardMainContent(props) {
     return (
         <div className="dashboard-main-content">
-            <DashboardMainContentHeader openSidebar={props.openSidebar} />
+            <DashboardMainContentHeader toggleSidebar={props.toggleSidebar} currentIcon={props.currentIcon} />
             <DashboardMainContentBody />
         </div>
     )

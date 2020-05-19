@@ -5,7 +5,7 @@ import volunteerImage from '../../../assets/images/volunteer.svg';
 import homeImg from '../../../assets/images/home.svg';
 import locationImage from '../../../assets/images/location.svg';
 import beneficiariesImage from '../../../assets/images/beneficiaries.svg';
-import { FaTimes } from "react-icons/fa";
+// import { FaTimes } from "react-icons/fa";
 
 
 
@@ -15,8 +15,6 @@ function DashboardSideBar(props) {
         <div className="entirePage">
             <div className="dashboard-sidebar">
                 <div className="sidebar-header">
-                    <FaTimes className='crossIcon' onClick={props.closeSidebar
-                    } />
 
                 </div>
                 <DashboardSideBarItem

@@ -1,6 +1,6 @@
 import React from 'react';
 import './DashboardMainContentHeader.css';
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function DashboardMainContentHeader(props) {
 
@@ -9,8 +9,13 @@ export default function DashboardMainContentHeader(props) {
     return (
         <div className="dashboard-main-content-header">
             {/* <FaEllipsisV /> */}
+            {props.currentIcon === false ?
+                <FaBars className='burgerMenu' onClick={props.toggleSidebar} />
+                :
+                <FaTimes className='crossIcon' onClick={props.toggleSidebar} />
+            }
 
-            <FaBars className='burgerMenu' onClick={props.openSidebar} />
+
 
 
             {/* <FaTimes /> */}
