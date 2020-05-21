@@ -12,40 +12,15 @@ import {  Route, Switch } from 'react-router';
 
 export default function DashboardMainContentBody(props){
 
-    const heads=["One","Two","three"];
     return (
-    
         <div className="dashboard-main-content-body">
-                {/* <Table
-                    tableBodyData={bodyData}
-                    tableHeadData={headData}
-                /> */}
                     <Switch>
-                    <Route path={"/admin/"} exact  component={Home}/>
-                    <Route path={"/admin/volunteers/"} exact   render={()=>{
-                        return (
-                            <Volunteers {...props} volunteers={props.volunteers}/>
-                        )
-                    }}/>
-                    <Route path={"/admin/beneficiaries/"}    exact strict component={Beneficiaries}/>
-                   
-                    <Route path={"/admin/pincodes/"}    render={()=>{
-                        return (
-                            <PinCodes {...props} pincodes={props.pincodes}/>
-                         )
-                    }}/>
-
-                    <Route path={"/admin/mandals/"}   render={()=>{
-                        return (
-                            <Mandals {...props} mandals={props.mandals}/>
-                        )
-                    }}/>
-
-                    <Route path={"/admin/panchayats/"}    render={()=>{
-                        return (
-                            <GramPanchayats {...props} panchayats={props.panchayats}/>
-                        )
-                    }}/>
+                        <Route path={"/admin/"} exact  component={Home}/>
+                        <Route path={"/admin/volunteers/"} exact  component={Volunteers}/>
+                        <Route path={"/admin/beneficiaries/"} exact  component={Beneficiaries}/>                   
+                        <Route path={"/admin/pincodes/"} component={PinCodes}/>
+                        <Route path={"/admin/mandals/"} component={Mandals}/>
+                        <Route path={"/admin/panchayats/"} component={GramPanchayats}/>
                     </Switch>
         </div>
     )

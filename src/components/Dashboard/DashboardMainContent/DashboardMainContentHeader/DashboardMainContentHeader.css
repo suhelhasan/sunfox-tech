@@ -1,7 +1,15 @@
 .dashboard-main-content-header{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     width: 100%;
-    padding:16px 24px;
+
+    padding:16px 20px;
     background-color: #f4f4f4;
+    justify-content: space-between;
+}
+
+.dashboard-main-content-header > img{
+    width:25px;
+    cursor: pointer;
+    height:25px;
 }

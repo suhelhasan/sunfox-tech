@@ -7,8 +7,11 @@
     align-items: center;
     padding-left: 16px;
     padding-right: 16px;
-    color: #9ba2b9;
+    color: white;
     transition: 0.1s;
+}
+.DashboardSideBarItem h4{
+    opacity: 0.6;
 }
 
 .DashboardSideBarItem a{
@@ -21,19 +24,30 @@
 
 .DashboardSideBarItem:hover{
     background-color: teal;
+    
 }
 a{
     text-decoration: none;
 }
 
 .item-active{
+    opacity: 1;
     text-decoration: none;
 }
 
 .item-active div{
-
+    opacity: 1;
     color:white;
     background-color: teal;
+}
+
+.item-active div h4{
+    opacity: 1;
+    color:white;
+}
+
+.item-active div img{
+    opacity: 1;
 }
 
 .item-not-active{
@@ -43,10 +57,11 @@ a{
 .DashboardSideBarItem img{
     width: 20px;
     height: 20px;
+    opacity: 0.6;
  }
 
 .DashboardSideBarItem h4{
     font-size: 1em;
     flex-wrap: wrap;
-    margin-left: 12px;
+    margin-left: 21px;
 }

@@ -1,48 +1,34 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styling from "./Login.module.css";
-import logo from "./gestures.svg";
+import helloImg from "../../assets/images/gestures.svg";
 import { Redirect } from "react-router";
-import Loader from '../UI/Loader/Loader';
+import Loader2 from '../UI/Loader2/Loader2';
+import {useSelector} from 'react-redux';
 
-class Login extends Component {
-  state = {
-    email: "",
-    password: "",
-  };
+export default function Login (props){
 
-  componentDidMount(){
-    console.log("Login",this.props);
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
 
-  }
+  const authState = useSelector(state=>state.auth);
+  const user = authState.user;
+  const error = authState.error;
+  
 
-  emailChangeHandler = (e) => {
-    this.setState({
-      email: e.target.value,
-    });
-  };
-  passwordChangeHandler = (e) => {
-    this.setState({
-      password: e.target.value,
-    });
-  };
-
-  render() {
-    if(this.props.user!==null)
-     return <Redirect to="/admin"/>
-
-    return (
-     
+  return (
+    (user!==null)?
+      <Redirect to="/admin"/>:
       <div className={styling.loginPage}>
         
-        {this.props.loading?
-          <div>
-          <Loader/>
+        {props.loading?
+          <div className={styling.loginLoadingSection}>
+          <Loader2 size="80"/> 
           <p>Logging in... Please wait.</p>
           </div>:
         <div className={styling.login}>
           
           <div className={styling.header}>
-            <img alt="logo" src={logo} />
+            <img alt="logo" src={helloImg} />
             <h1>Hello, </h1>
             <h3>Please Login</h3>
           </div>
@@ -50,14 +36,14 @@ class Login extends Component {
             <input
               type="text"
               placeholder="Enter email address"
-              onChange={this.emailChangeHandler}
-              value={this.state.email}
+              onChange={(e)=>setEmail(e.target.value)}
+              value={email}
             />
             <input
               type="password"
               placeholder="Enter Password"
-              onChange={this.passwordChangeHandler}
-              value={this.state.password}
+              onChange={(e)=>setPassword(e.target.value)}
+              value={password}
             />
             <div className={styling.checkboxDiv}>
               <input type="checkbox" value="" />
@@ -67,23 +53,22 @@ class Login extends Component {
               type="submit"
               value="Login"
               onClick={(e) =>
-                this.props.onLoginHandler(
+                props.onLoginHandler(
                   e,
-                  this.state.email,
-                  this.state.password
+                  email,
+                  password
                 )
               }
             />
           </form>
             {
-              this.props.error !==null?
-            <p className={styling.error}>{""+this.props.error}</p>
+              error !==null?
+            <p className={styling.error}>{""+error}</p>
               :null
             }
         </div>
   }
       </div>
-    );
-  }
+    
+  )
 }
-export default Login;

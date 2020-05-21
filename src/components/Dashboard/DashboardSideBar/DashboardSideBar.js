@@ -5,13 +5,31 @@ import volunteerImage from '../../../assets/images/volunteer.svg';
 import homeImg from '../../../assets/images/home.svg';
 import locationImage from '../../../assets/images/location.svg';
 import beneficiariesImage from '../../../assets/images/beneficiaries.svg';
-import {Link,NavLink} from 'react-router-dom';
-
+import mandalsImage from '../../../assets/images/mandal.svg';
+import panchayatsImage from '../../../assets/images/panchayat.svg';
+import {useSelector} from 'react-redux';
+import salutingImg from '../../../assets/images/saluting.svg';
 
 function DashboardSideBar(props){
+
+        const state = useSelector(state=>state.toggleSidebar)
+        const sideBarExpanded = state.sideBarExpanded;
+        const toggleClicked = state.sideBarToggleClicked;
+        const authData = useSelector(state=>state.auth)
+
+        const email = authData.user['email']
+        console.log("Toggle",sideBarExpanded);
+
         return (
-            <div className="dashboard-sidebar">
+            <div className={"dashboard-sidebar" + (!sideBarExpanded?(!toggleClicked?" sidebar-hidden-on-item-click":" sidebar-hidden"):"")}>
             <div className="sidebar-header">
+                <div>
+                    <div className="sidebar-header-inner-div">
+                        <img src={salutingImg}/>
+                        <p>Hello,</p>
+                    </div>
+                    <p>{email}</p>
+                </div>
             </div>
                 <DashboardSideBarItem 
                     linkTo={"/admin/"}
@@ -31,14 +49,15 @@ function DashboardSideBar(props){
                     title="Pin Codes" />
                 <DashboardSideBarItem 
                     linkTo={"/admin/mandals/"} 
-                    image={locationImage} 
+                    image={mandalsImage} 
                     title="Mandals" />
                 <DashboardSideBarItem 
                     linkTo={"/admin/panchayats/"}
-                    image={locationImage} 
+                    image={panchayatsImage} 
                     title="Gram Panchayats" />
         </div>
         );
+    
 }
 
 export default DashboardSideBar;

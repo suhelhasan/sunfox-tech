@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+.loginLoadingSection{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 .error{

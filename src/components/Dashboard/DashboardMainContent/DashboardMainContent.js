@@ -9,13 +9,7 @@ function DashboardMainContent(props){
     return (
        <div className="dashboard-main-content">
             <DashboardMainContentHeader logoutHandler={props.logoutHandler}/>
-        
-             
-            <DashboardMainContentBody 
-                pincodes={props.pincodes}
-                panchayats={props.panchayats}
-                mandals={props.mandals}
-                volunteers={props.volunteers}/>
+            <DashboardMainContentBody />
        </div>
     )
 }

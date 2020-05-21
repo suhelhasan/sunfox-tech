@@ -1,0 +1,8 @@
+.table-data-buttons-cell{
+    display: flex;
+    flex-direction: column;
+}
+
+.table-data-buttons-cell button{
+    margin-top: 4px;
+}
